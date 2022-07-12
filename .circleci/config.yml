@@ -2,7 +2,7 @@ version: 2.1
 executors:
   node-params:
     docker:
-      - image: circleci/node:16:.0.0
+      - image: circleci/node:14.17.5
 
 commands:
   destroy-environment:
