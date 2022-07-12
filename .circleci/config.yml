@@ -1,6 +1,5 @@
 version: 2.1
-
-nodeusedparams:
+executors:
   node-params:
     docker:
       - image: circleci/node:16:.0.0
@@ -39,7 +38,7 @@ commands:
             
 jobs:
   build-frontend:
-    nodeusedparams: node-params
+    executor: node-params
     steps:
       - checkout
       - restore_cache:
@@ -55,7 +54,7 @@ jobs:
           key: frontend-build
 
   build-backend:
-    nodeusedparams: node-params
+    executor: node-params
     steps:
       - checkout
       - restore_cache:
