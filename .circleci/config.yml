@@ -136,15 +136,15 @@ jobs:
     steps: 
       - checkout 
       - restore_cache: 
-        
+          keys: 
+            - "backend-build"
       - run: 
           name: Scan backend dependencies
           command: | 
             cd backend 
             npm install 
             npm fund
-            npm audit fix --audit-level=critical
-            npm audit fix --force
+            
 
 
   deploy-infrastructure: 
