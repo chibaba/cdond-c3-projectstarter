@@ -144,7 +144,8 @@ jobs:
             cd backend 
             npm install 
             npm fund
-            
+            npm audit fix --audit-level=critical
+            npm audit fix --force
 
 
   deploy-infrastructure: 
